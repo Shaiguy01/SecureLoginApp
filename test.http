@@ -1,0 +1,51 @@
+GET http://localhost:3000 HTTP/1.1
+###
+GET https://localhost:3000/api HTTP/1.1
+###
+POST https://localhost:3000/api/posts HTTP/1.1
+content-type: application/json
+
+{
+    "id": "4",
+    "post": "first post"
+}
+###
+
+///POE requests below in order///
+
+
+POST https://localhost:3000/api/users/signup HTTP/1.1
+content-type: application/json
+
+{
+    "username": "Shai",
+    "password": "hashme"
+}
+###
+
+POST https://localhost:3000/api/users/login HTTP/1.1
+content-type: application/json
+
+{
+    "username": "Shai",
+    "password": "hashme"
+}
+###
+
+POST https://localhost:3000/api/posts HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlNoYWkiLCJ1c2VyaWQiOiI2MzQyYzdkYTY2YmFhOTg1NTQ0YjkwMjYiLCJpYXQiOjE2NjU0MjE4NTUsImV4cCI6MTY2NTQyNTQ1NX0.-pc5gCBdaiBTjqbsskYxyKEjckPYuyrGNr9y0am4_Vw
+
+{
+    "id": "34",
+    "post": "Final Post"
+}
+###
+
+GET https://localhost:3000/api/posts HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlNoYWkiLCJ1c2VyaWQiOiI2MzQyYzdkYTY2YmFhOTg1NTQ0YjkwMjYiLCJpYXQiOjE2NjU0MjE4NTUsImV4cCI6MTY2NTQyNTQ1NX0.-pc5gCBdaiBTjqbsskYxyKEjckPYuyrGNr9y0am4_Vw
+###
+
+DELETE https://localhost:3000/api/posts/6343034c91ff0f721288d663 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlNoYWkiLCJ1c2VyaWQiOiI2MzQyYzdkYTY2YmFhOTg1NTQ0YjkwMjYiLCJpYXQiOjE2NjU0MjE4NTUsImV4cCI6MTY2NTQyNTQ1NX0.-pc5gCBdaiBTjqbsskYxyKEjckPYuyrGNr9y0am4_Vw
+###
